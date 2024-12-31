@@ -5,39 +5,49 @@ import { Button, Stack } from '@mui/material'
 import BusLabelTags from '../component/BusLabelTags'
 import Subs from '../typo/Subs'
 import PrimaryButton from '../component/button/PrimaryButton'
+import { Link } from 'react-router-dom'
 
 export default function Booking() {
 
     const [seats,setseats] = useState([])
-    
+
+    const handleClick = (number)=>{
+        console.log(number);
+    }
+
     const listSeats = (totalseats)=>{
         let generatedseats = []
         for (let i = 1 ; i <=  totalseats; i++) {
             generatedseats.push(
-                <button className='mx-auto'>
+                <button className='mx-auto' onClick={()=>handleClick(i)}>
                     <div className='p-4 flex items-center justify-center bg-gray-200 size-16 rounded-lg'>
                         {i}
                     </div>
                 </button>
-            )     
+            )
         }
         setseats(generatedseats)
     }
 
+
+
     useEffect(()=>{
         listSeats(20)
     },[])
+
+
+
   return (
     <div className='p-4'>
       <div className='adjust'>
         <h1 className='p-4 mb-2 bg-primary text-white font-montserrat font-bold md:font-semibold text-sm md:text-2xl'>Bus Booking</h1>
-        
+
         <Mintitle text={'Select Your Seat'} otherStyles={'font-semibold mb-3'}/>
         <div className='grid md:grid-cols-2 gap-5'>
             <div>
                 <div className=' bg-blue-200/65 rounded-xl'>
                     <div className='bg bg-blue-400/35 rounded-xl p-4 grid-cols-2 grid gap-3'>
-                        
+
                         <CardTag
                             head={'Pickup Point'}
                             value={'UCC Campus'}
@@ -72,7 +82,7 @@ export default function Booking() {
                             color={'yellow'}
                             label={'Locked'}
                         /> */}
-                        
+
                     </div>
                 </div>
             </div>
@@ -86,9 +96,12 @@ export default function Booking() {
                    { seats }
                 </div>
 
+
+
                 {/* <PrimaryButton
                     title={'Proceed to Payment'}
                 /> */}
+                <Link to={'/payment'}>
                 <Button
                     variant='contained'
                     sx={{
@@ -98,6 +111,7 @@ export default function Booking() {
                 >
                     Proceed to Payment
                 </Button>
+                </Link>
             </div>
         </div>
       </div>
