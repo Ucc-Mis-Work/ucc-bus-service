@@ -12,10 +12,10 @@ export default function BookingTips() {
         />
 
         <div className='adjus'>
-            <ul className='border-s p-3 ms-0 '>
+            <ul className='border-s p-3 ms-0 flex flex-col md:flex-row'>
                 <li className='relative mb-10 ms-4'>
                         <div className='w-4 h-4 rounded-full bg-primary absolute mt-1.5 -start-[36px]'></div>
-                        
+
                         <Mintitle
                             text={'Step 1'}
                             otherStyles={'mb-5 font-semibold'}
@@ -27,7 +27,7 @@ export default function BookingTips() {
                 </li>
                 <li className='relative mb-10 ms-4'>
                         <div className='w-4 h-4 rounded-full bg-primary absolute mt-1.5 -start-[36px]'></div>
-                        
+
                         <Mintitle
                             text={'Step 2'}
                             otherStyles={'mb-5 font-semibold'}
@@ -39,7 +39,7 @@ export default function BookingTips() {
                 </li>
                 <li className='relative mb-10 ms-4'>
                         <div className='w-4 h-4 rounded-full bg-primary absolute mt-1.5 -start-[36px]'></div>
-                        
+
                         <Mintitle
                             text={'Step 3'}
                             otherStyles={'mb-5 font-semibold'}

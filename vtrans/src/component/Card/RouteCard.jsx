@@ -13,7 +13,7 @@ export default function RouteCard() {
   return (
     <div className='p-7 border-[1px] grid grid-cols-2 bg-white mb-2'>
       <div>
-        <Title 
+        <Title
             text={'Campus - Accra'}
         />
         <Subs
@@ -22,7 +22,7 @@ export default function RouteCard() {
         />
 
         <div className='my-4'>
-            <FontAwesomeIcon icon={faStar}/>
+            {/* <FontAwesomeIcon icon={faStar}/> */}
         </div>
 
         <div className='mb-4'>
