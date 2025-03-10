@@ -14,10 +14,12 @@ return new class extends Migration
         Schema::create('users', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->foreignId('bus_id')->nullable()->constrained()->onDelete('cascade'); // Foreign key to buses, nullable for non-bus users
-            $table->string('email')->unique();
+            $table->string('email')->nullable()->unique(); ;
+            $table->string('phone')->nullable()->unique(); ;
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
+            // $table->foreignId('role')
+            $table->string('address')->nullable();
             $table->string('image')->nullable();
             $table->rememberToken();
             $table->timestamps();
