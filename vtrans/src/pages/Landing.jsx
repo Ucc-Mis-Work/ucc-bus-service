@@ -43,7 +43,7 @@ export default function Landing() {
                     Say goodbye to waiting and hello to convenience! With Oyalo 🚌, booking a ride is as easy as a tap. Whether you're heading to work, meeting friends, or exploring the city, we’ve got you covered. Enjoy safe, affordable, and reliable rides at your fingertips. Download the app today and experience the future of transport!
                 </p>
 
-                <Link to={''} className='text-blue-700 text sm underline flex items-center gap-3 font-montserrat font-semibold mt-9 group'>
+                <Link to={'/passenger/login'} className='text-blue-700 text sm underline flex items-center gap-3 font-montserrat font-semibold mt-9 group'>
                     <h1 className='py-2'>See What Oyalo Has For Passengers </h1>
                     <ArrowRight className='group-hover:translate-x-3 duration-200'/>
                 </Link>

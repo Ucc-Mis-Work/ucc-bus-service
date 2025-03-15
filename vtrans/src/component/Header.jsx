@@ -73,17 +73,17 @@ export default function Header() {
 
                     <div className='space-y-4'>
                         <Flyoutsublink
-                            link={''}
+                            link={'/passenger/login'}
                             title={'Register With Oyalo.'}
                             description={'Create an account and enjoy your journey with Oyalo.'}
                         />
                         <Flyoutsublink
-                            link={''}
+                            link={'/passenger/login'}
                             title={'Book A Ticket.'}
                             description={'Let Start the journey with a ticket.'}
                         />
                         <Flyoutsublink
-                            link={''}
+                            link={'/passenger/login'}
                             title={'Search For Routes.'}
                             description={'Where would you lik to go.'}
                         />

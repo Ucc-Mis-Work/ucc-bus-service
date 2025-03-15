@@ -20,6 +20,8 @@ import AddVehicle from './pages/DriversPortal/AddVehicle'
 import DriverJournies from './pages/DriversPortal/DriverJournies'
 import DriverRoutesSelect from './pages/DriversPortal/DriverRoutesSelect'
 import NotFound from './pages/NotFound'
+import PassengerLogin from './pages/Passengers/PassengerLogin'
+import PassengerLanding from './pages/Passengers/PassengerLanding'
 
 
 export default function App() {
@@ -35,6 +37,13 @@ export default function App() {
             <Route path='/booking/:id' element={<Booking/>}/>
             <Route path='/payment' element={<Payment/>}/>
 
+
+            {/* Passengers */}
+            <Route path='/passenger/login' element={<PassengerLogin/>} />
+            <Route path='/passenger' element={<D_Layout/>}>
+                <Route index element={<PassengerLanding/>} />
+                <Route path='main' element={<PassengerLanding/>}/>
+            </Route>
 
 
 

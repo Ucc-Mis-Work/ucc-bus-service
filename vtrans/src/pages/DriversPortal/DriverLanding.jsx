@@ -6,6 +6,9 @@ import { BusFrontIcon, CarFront, CarFrontIcon, Coins, Construction, Eye, EyeClos
 import { Button, Dialog, DialogActions, DialogContent, DialogTitle } from '@mui/material'
 import EditDriverForm from '../../component/form/EditDriverForm'
 import EditDriverVehicleForm from '../../component/form/EditDriverVehicleForm'
+import { AnalysisCard } from '../../component/Card/new/AnalysisCard'
+import { BusCard } from '../../component/Card/new/BusCard'
+import { CustomLink } from '../../component/button/CustomLink'
 
 export default function DriverLanding() {
 
@@ -13,69 +16,6 @@ export default function DriverLanding() {
     const [expand,setexpand] = useState(false)
     const [showEditDriver,setshowEditDriver] = useState(false)
     const [showEditVehicle,setshowEditVehicle] = useState(false)
-
-    const CustomLink = ({icon,name,link})=>{
-        return (
-            <Link to={link} className='inline-grid min-w-max'>
-                <h1 className='py-3 px-6 bg-yellow-400 hover:bg-yellow-400/80 rounded-2xl flex items-center gap-2 group font-medium hover:text-gray-600 text-blue-900 text-sm'>
-                    {icon}
-                    {name}
-                </h1>
-            </Link>
-        )
-    }
-
-    const AnalysisCard = ({icon,title,value,color})=>{
-        return (
-            <div className='flex flex-col bg-white rounded-2xl shadow p-4 gap-2'>
-                <div className={`p-2 ${color} rounded-lg max-w-min`}>
-                    {icon}
-                </div>
-                <p className='text-xs md:text-sm font-montserrat text-gray-600'>{title}</p>
-                <p className='font-poppins font-semibold text-lg md:text-2xl'>{value}</p>
-            </div>
-        )
-    }
-
-    // TODO : Plate, Type Eg: , Capacity ,
-    const BusCard = ({car_plate,capacity,type,handleEdit})=>{
-        return(
-            <button className='p-3 bg-gray-100 rounded-xl flex items-start justify-between w-full gap-6 mb-2'>
-                <div className='flex-1' onClick={()=>setexpand((prev)=>!prev)}>
-                    <h1 className='flex items-center text-sm gap-2 text-primary font-medium mb-1'><KeySquare className=''/>{car_plate}</h1>
-
-                    {expand && <div>
-                        <hr className='my-3'/>
-
-                        <h1 className='text-sm font-medium flex gap-2 mb-2'><Users2 className='size-5'/>Capacity:
-                        <span className='font-semibold mx-1 text-blue-800'>
-                            {capacity}
-                        </span>
-                    </h1>
-
-                    <h1 className='text-sm font-medium flex gap-2'><CarFrontIcon className='size-5'/>Vehicle Type:
-                        <span className='font-semibold mx-1 text-blue-800'>
-                            {type}
-                        </span>
-                    </h1>
-                        </div>
-                    }
-
-
-                </div>
-
-                <div className='space-x-2'>
-                    <button className='p-2 bg-blue-200 rounded-xl' onClick={handleEdit}>
-                        <PenIcon className='size-4 text-blue-700'/>
-                    </button>
-                    <button className='p-2 bg-red-200 rounded-xl'>
-                        <Trash className='size-4 text-red-700'/>
-                    </button>
-
-                </div>
-            </button>
-        )
-    }
 
 
 
@@ -225,6 +165,8 @@ export default function DriverLanding() {
                             car_plate={'GN-2233-27'}
                             capacity={100}
                             type={'Sprinter'}
+                            setexpand={()=>setexpand((prev)=>!prev)}
+                            expand={expand}
                         />
 
                     </div>
@@ -275,7 +217,7 @@ export default function DriverLanding() {
 
 
         {/* TODO: */}
-        
+
     </div>
   )
 }
