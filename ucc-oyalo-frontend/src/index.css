@@ -3,8 +3,12 @@
 @tailwind utilities;
 
 
-.adjust{
+/* .adjust{
   @apply w-[95%] md:w-[80%] mx-auto
+} */
+
+.adjust {
+  @apply max-w-7xl mx-auto
 }
 
 

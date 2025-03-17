@@ -22,6 +22,8 @@ import DriverRoutesSelect from './pages/DriversPortal/DriverRoutesSelect'
 import NotFound from './pages/NotFound'
 import PassengerLogin from './pages/Passengers/PassengerLogin'
 import PassengerLanding from './pages/Passengers/PassengerLanding'
+import BookTrip from './pages/Passengers/BookTrip'
+import PassengerTrips from './pages/Passengers/PassengerTrips'
 
 
 export default function App() {
@@ -43,6 +45,8 @@ export default function App() {
             <Route path='/passenger' element={<D_Layout/>}>
                 <Route index element={<PassengerLanding/>} />
                 <Route path='main' element={<PassengerLanding/>}/>
+                <Route path='booktrip' element={<BookTrip/>}/>
+                <Route path='mytrips/:id' element={<PassengerTrips/>}/>
             </Route>
 
 

@@ -13,19 +13,19 @@ export default function PassengerLanding() {
         },
         {
             name:'Book A Trip',
-            link:'',
+            link:'/passenger/booktrip',
             icon:<Book className='group-hover:scale-110 group-hover:text-white duration-150'/>
         },
         {
             name:'My Trips',
-            link:'',
+            link:'/passenger/mytrips/1',
             icon:<Construction className='group-hover:scale-110 group-hover:text-white duration-150'/>
         },
     ]
 
 
   return (
-    <div className='p-2 bg-gray-50 w-full h-full min-h-screen relative'>
+    <div className='p-2 bg-gray-50 w-full h-full min-h-- relative'>
         <div className='adjust py-10'>
 
 
@@ -69,6 +69,12 @@ export default function PassengerLanding() {
                             value={'0'}
                             color={'bg-blue-200 text-blue-700'}
                         />
+                        <AnalysisCard
+                            icon={<Footprints className='size-5'/>}
+                            title={'Total Trips'}
+                            value={'0'}
+                            color={'bg-blue-200 text-blue-700'}
+                        />
 
 
                     </div>
@@ -76,7 +82,7 @@ export default function PassengerLanding() {
 
                 </div>
 
-                {/* Driver Details */}
+                {/* Passenger Details */}
                 <div className='bg-white p-4 shadow rounded-2xl mb-6'>
                         <div className='flex items-center justify-between'>
                             <h1 className='font-montserrat text-xl font-semibold text-gray-600 flex gap2'><User className='text-blue-600'/>Profile</h1>
@@ -118,7 +124,7 @@ export default function PassengerLanding() {
 
         </div>
 
-        <h1 className='absolute left-0 right-0 text-center bottom-10 text-3xl font-montserrat font-bold text-gray-500'>Oyalo</h1>
+        {/* <h1 className='absolute left-0 right-0 text-center bottom-10 text-3xl font-montserrat font-bold text-gray-500'>Oyalo</h1> */}
 
     </div>
   )
