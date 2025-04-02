@@ -25,7 +25,7 @@ export default function PassengerLanding() {
 
 
   return (
-    <div className='p-2 bg-gray-50 w-full h-full min-h-- relative'>
+    <div className='p-2 bg-gray-50 w-full h-full min-h-- relative overflow-y-auto'>
         <div className='adjust py-10'>
 
 
