@@ -12,8 +12,13 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('passengers', function (Blueprint $table) {
-            $table->id();
+            $table->id('passenger_id');
             $table->foreignId('bus_id')->constrained()->onDelete('cascade'); 
+            $table->foreignId('user_id')->constrained()->onDelete('cascade');
+            $table->foreignId('route_id')->constrained()->onDelete('cascade');
+            $table->string('seat_number')->nullable()->unique();
+            $table->enum('status', ['booked', 'cancelled'])->default('booked');
+            $table->string('payment_id')->nullable();
             $table->timestamps();
         });
     }

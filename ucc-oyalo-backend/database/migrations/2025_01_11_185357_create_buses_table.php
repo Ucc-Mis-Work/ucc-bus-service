@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('name');
             $table->string('bus_type');
             $table->string('bus_color');
-            $table->foreignId('user_id')->constrained()->onDelete('cascade');
+            $table->foreignId('passenger_id')->constrained()->onDelete('cascade');
             $table->foreignId('driver_id')->constrained()->onDelete('cascade');
             $table->foreignId('route_id')->constrained()->onDelete('cascade');
             $table->string('bus_license_number')->unique();
