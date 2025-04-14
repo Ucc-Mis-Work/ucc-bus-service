@@ -3,6 +3,7 @@
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\GoogleAuthController;
 use App\Http\Controllers\DriverController;
+use App\Http\Controllers\PassengerController;
 use Illuminate\Http\Request;
 
 use Illuminate\Support\Facades\Route;
@@ -21,6 +22,8 @@ Route::apiResource('drivers', DriverController::class);
 // Route::post('drivers/create',[DriverController::class,'create']);
 // Route::put('drivers/{id}',[DriverController::class,'edit']);
 
+// route for passengers
+Route::apiResource('passengers', PassengerController::class);
 
 
 Route::get('/auth/google/redirect', [GoogleAuthController::class, 'redirectToGoogle']);
