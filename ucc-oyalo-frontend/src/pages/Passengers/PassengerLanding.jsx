@@ -2,6 +2,7 @@ import React from 'react'
 import { AnalysisCard } from '../../component/Card/new/AnalysisCard'
 import { Book, Construction, Footprints, ListCheck, ListChecks, LocateFixed, Mail, PenLine, Phone, Search, User, UserCheck } from 'lucide-react'
 import { CustomLink } from '../../component/button/CustomLink'
+import { Divider } from '@mui/material'
 
 export default function PassengerLanding() {
 
@@ -9,123 +10,160 @@ export default function PassengerLanding() {
         {
             name:'Search Route',
             link:'',
-            icon:<Search className='group-hover:scale-110 group-hover:text-white duration-150'/>
+            icon:<Search className='size-5 group-hover:scale-110 transition-transform'/>
         },
         {
             name:'Book A Trip',
             link:'/passenger/booktrip',
-            icon:<Book className='group-hover:scale-110 group-hover:text-white duration-150'/>
+            icon:<Book className='size-5 group-hover:scale-110 transition-transform'/>
         },
         {
             name:'My Trips',
             link:'/passenger/mytrips/1',
-            icon:<Construction className='group-hover:scale-110 group-hover:text-white duration-150'/>
+            icon:<Construction className='size-5 group-hover:scale-110 transition-transform'/>
         },
     ]
 
-
   return (
-    <div className='p-2 bg-gray-50 w-full h-full min-h-- relative overflow-y-auto'>
-        <div className='adjust py-10'>
+    <div className='p-4 bg-gradient-to-br from-gray-50 to-blue-50 min-h-screen'>
+        <div className='max-w-6xl mx-auto py-8'>
 
-
-            {/* WELCOME HERO HERE */}
-
-            <div className='flex flex-col md:flex-row md:items-center gap-5 justify-between mb-5'>
-                <div>
-                    <h1 className=' text-2xl md:text-4xl font-poppins font-bold text-primary'>
-                        Weclome back, Eric 👋!
+            {/* Welcome Section */}
+            <div className='flex flex-col md:flex-row justify-between items-start mb-8'>
+                <div className='mb-6 md:mb-0'>
+                    <h1 className='text-3xl md:text-4xl font-bold text-gray-800 mb-2'>
+                        Welcome back, Eric 👋
                     </h1>
-                    <p className='text-xs md:text-sm text-gray-500 font-normal'>What do you want to work on today! Oyalo is ready for your services</p>
+                    <p className='text-gray-500 text-sm md:text-base'>
+                        Ready for your next adventure? Let's make it happen!
+                    </p>
+                </div>
+                <div className='bg-white p-4 rounded-xl shadow-sm w-full md:w-auto'>
+                    <div className='flex gap-4'>
+                        {links.map((lnk, index) => (
+                            <CustomLink
+                                key={index}
+                                icon={lnk.icon}
+                                name={lnk.name}
+                                link={lnk.link}
+                                className="flex-1 md:flex-none"
+                            />
+                        ))}
+                    </div>
                 </div>
             </div>
 
-
-            <div className='grid grid-cols-1 md:grid-cols-2 gap-3'>
-
-
-                <div>
-
-                    {/* TODO: Links */}
-                    <div className='space-x-2 space-y-3 mb-5'>
-                        {
-                            links.map((lnk,index)=>(
-                                <CustomLink
-                                    key={index}
-                                    icon={lnk.icon}
-                                    name={lnk.name}
-                                    link={lnk.link}
-                                />
-                            ))
-                        }
+            {/* Stats Dashboard */}
+            <div className='grid md:grid-cols-2 gap-6 mb-8'>
+                <div className='grid grid-cols-1 md:grid-cols-2 gap-4'>
+                    <div>
+                        <AnalysisCard
+                            icon={<Footprints className='size-6 text-blue-600'/>}
+                            title={'Completed Trips'}
+                            value={'12'}
+                            color={'bg-blue-100'}
+                            trend='+4% from last month'
+                        />
                     </div>
 
-                    {/* Analysis */}
-                    <div className='grid grid-cols-1 md:grid-cols-2 gap-4 mb-6 items-center justify-center w-full'>
-
+                    <div>
                         <AnalysisCard
-                            icon={<Footprints className='size-5'/>}
-                            title={'Total Trips'}
-                            value={'0'}
-                            color={'bg-blue-200 text-blue-700'}
+                            icon={<ListCheck className='size-6 text-green-600'/>}
+                            title={'Upcoming Trips'}
+                            value={'3'}
+                            color={'bg-green-100'}
+                            trend='2 new this week'
                         />
-                        <AnalysisCard
-                            icon={<Footprints className='size-5'/>}
-                            title={'Total Trips'}
-                            value={'0'}
-                            color={'bg-blue-200 text-blue-700'}
-                        />
+                    </div>
+                </div>
 
-
+                {/* Profile Card */}
+                <div className='bg-white p-6 rounded-xl shadow-sm'>
+                    <div className='flex justify-between items-start mb-10'>
+                        <div>
+                            <h2 className='text-xl font-semibold text-gray-800 flex items-center gap-2'>
+                                <User className='text-blue-600 size-6'/>
+                                Passenger Profile
+                            </h2>
+                            <p className='text-sm text-gray-500 mt-1'>Manage your personal information</p>
+                        </div>
+                        <button className='flex items-center gap-1 text-blue-600 hover:text-blue-700 transition-colors'>
+                            <PenLine className='size-5'/>
+                            <span className='hidden md:inline'>Edit Profile</span>
+                        </button>
                     </div>
 
-
+                    <div className='grid grid-cols-1 lg:grid-cols-2 gap-4'>
+                        <ProfileDetail 
+                            icon={<UserCheck className='size-5 text-gray-500'/>}
+                            label="Full Name"
+                            value="John Doe"
+                        />
+                        <ProfileDetail 
+                            icon={<Phone className='size-5 text-gray-500'/>}
+                            label="Phone Number"
+                            value="+1 (555) 123-4567"
+                        />
+                        <ProfileDetail 
+                            icon={<Mail className='size-5 text-gray-500'/>}
+                            label="Email"
+                            value="john.doe@example.com"
+                        />
+                        <ProfileDetail 
+                            icon={<LocateFixed className='size-5 text-gray-500'/>}
+                            label="Primary Address"
+                            value="Accra, Ghana"
+                        />
+                    </div>
                 </div>
-
-                {/* Passenger Details */}
-                <div className='bg-white p-4 shadow rounded-2xl mb-6'>
-                        <div className='flex items-center justify-between'>
-                            <h1 className='font-montserrat text-xl font-semibold text-gray-600 flex gap2'><User className='text-blue-600'/>Profile</h1>
-                            <button className='flex items-center text-blue-600 underline  text-sm' onClick={()=>setshowEditDriver(prev => !prev)}>
-                                <PenLine className='size-5'/>Edit
-                            </button>
-                        </div>
-                        <hr className='my-2'/>
-
-                        <div className='grid grid-cols-2 gap-1'>
-                            <div className='mb-4 col-span-2'>
-                                <h1 className='text-gray-500 text-sm flex items-center gap-1 mb-1'><UserCheck className='size-5'/>Name</h1>
-                                <p className='font-montserrat font-semibold'>John Doe</p>
-                            </div>
-                            <div className='mb-4'>
-                                <h1 className='text-gray-500 text-sm flex items-center gap-1 mb-1'><Phone className='size-5'/>Phone</h1>
-                                <p className='font-montserrat font-semibold'>0000000000</p>
-                            </div>
-                            <div className='mb-4'>
-                                <h1 className='text-gray-500 text-sm flex items-center gap-1 mb-1'><LocateFixed className='size-5'/>Address</h1>
-                                <p className='font-montserrat font-semibold'>Accra ...</p>
-                            </div>
-                            <div className='mb-4'>
-                                <h1 className='text-gray-500 text-sm flex items-center gap-1 mb-1'><Mail className='size-5'/>Email</h1>
-                                <p className='font-montserrat font-semibold'>Required*</p>
-                            </div>
-                            <div className='mb-4'>
-                                <h1 className='text-gray-500 text-sm flex items-center gap-1 mb-1'><ListChecks className='size-5'/>Drivers License</h1>
-                                <p className='font-montserrat font-semibold'>Required*</p>
-                            </div>
-                        </div>
-                </div>
-
             </div>
 
-
-
-
+            {/* Recent Activity Section */}
+            <div className='bg-white p-6 rounded-xl shadow-sm'>
+                <h3 className='text-lg font-semibold font-montserrat mb-4 flex items-center gap-2'>
+                    <ListChecks className='size-5 text-purple-600'/>
+                    Recent Trips
+                </h3>
+                <Divider sx={{my:4}}/>
+                <div className='space-y-4'>
+                    <TripItem 
+                        date="2024-03-15"
+                        route="Accra to Kumasi"
+                        status="Completed"
+                    />
+                    <TripItem 
+                        date="2024-03-18"
+                        route="Kumasi to Tamale"
+                        status="Upcoming"
+                    />
+                </div>
+            </div>
 
         </div>
-
-        {/* <h1 className='absolute left-0 right-0 text-center bottom-10 text-3xl font-montserrat font-bold text-gray-500'>Oyalo</h1> */}
-
     </div>
   )
 }
+
+const ProfileDetail = ({ icon, label, value }) => (
+    <div className='flex items-start gap-3 font-montserrat'>
+        <span className='mt-1'>{icon}</span>
+        <div>
+            <p className='text-sm text-gray-500'>{label}</p>
+            <p className='font-medium text-gray-800 truncate'>{value}</p>
+        </div>
+    </div>
+)
+
+const TripItem = ({ date, route, status }) => (
+    <div className='flex justify-between items-center p-3 hover:bg-gray-50 rounded-lg transition-colors border-b-[1px]'>
+        <div>
+            <p className='text-sm text-gray-500'>{date}</p>
+            <p className='font-medium'>{route}</p>
+        </div>
+        <span className={`px-3 py-1 rounded-full text-sm ${
+            status === 'Completed' ? 'bg-green-100 text-green-800' : 'bg-blue-100 text-blue-800'
+        }`}>
+            {status}
+        </span>
+    </div>
+)

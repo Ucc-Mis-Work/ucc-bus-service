@@ -30,7 +30,7 @@ export default function Landing() {
     <div className='min-h-screen h-screen bg-white relative'>
         <Header/>
         <BusInfo/>
-        <div className='adjust'>
+        <div className='adjust md:p-4 p-2'>
             <PreEnquirySection/>
         </div>
 

@@ -3,7 +3,7 @@ import Images from '../../constant/Images'
 import { Typewriter } from 'react-simple-typewriter'
 import { Link } from 'react-router-dom'
 import { BusFrontIcon, CarFront, CarFrontIcon, Coins, Construction, Eye, EyeClosed, Footprints, KeySquare, ListChecks, LocateFixed, Mail, Map, MapIcon, Pen, PenIcon, PenLine, Phone, Trash, User, UserCheck, Users, Users2 } from 'lucide-react'
-import { Button, Dialog, DialogActions, DialogContent, DialogTitle } from '@mui/material'
+import { Button, Dialog, DialogActions, DialogContent, DialogTitle, Divider } from '@mui/material'
 import EditDriverForm from '../../component/form/EditDriverForm'
 import EditDriverVehicleForm from '../../component/form/EditDriverVehicleForm'
 import { AnalysisCard } from '../../component/Card/new/AnalysisCard'
@@ -100,19 +100,24 @@ export default function DriverLanding() {
                 />
             </div>
 
+           <Divider sx={{my:3}}/>
+           <h1 className='font-semibold font-montserrat text-lg text-gray-500'>Driver Actions</h1>
+
             {/* TODO: Links */}
-            <div className='space-x-2 space-y-3 my-5'>
+            <div className='space-x-2 space-y-3'>
                 {
                     links.map((lnk,index)=>(
                         <CustomLink
-                            key={index}
-                            icon={lnk.icon}
-                            name={lnk.name}
-                            link={lnk.link}
+                        key={index}
+                        icon={lnk.icon}
+                        name={lnk.name}
+                        link={lnk.link}
                         />
                     ))
                 }
             </div>
+
+            <Divider sx={{my:3}}/>
 
             {/* Personal & Vehicles Details */}
             <div className='grid grid-cols-1 md:grid-cols-2 gap-3'>

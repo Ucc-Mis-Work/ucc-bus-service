@@ -12,8 +12,8 @@ export default {
         nunito: ['Nunito', 'sans-serif'],
       },
       colors:{
-        primary:'#1F2937',
-        secondary:'#88bdf2',
+        primary:'#1D2D36',
+        secondary:'#FFCB05',
       },
       width:{
         lg:'100%',

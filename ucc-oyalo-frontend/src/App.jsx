@@ -72,7 +72,7 @@ export default function App() {
 
             </Route>
 
-            <Route path='/seatbutton' element={<SeatButtonTest/>}/>
+            {/* <Route path='/seatbutton' element={<SeatButtonTest/>}/> */}
 
 
 
