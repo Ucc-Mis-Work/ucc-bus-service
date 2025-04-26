@@ -4,6 +4,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\GoogleAuthController;
 use App\Http\Controllers\DriverController;
 use App\Http\Controllers\PassengerController;
+use App\Http\Controllers\UserController;
 use Illuminate\Http\Request;
 
 use Illuminate\Support\Facades\Route;
@@ -24,6 +25,9 @@ Route::apiResource('drivers', DriverController::class);
 
 // route for passengers
 Route::apiResource('passengers', PassengerController::class);
+
+// route for users
+Route::apiResource('users', UserController::class);
 
 
 Route::get('/auth/google/redirect', [GoogleAuthController::class, 'redirectToGoogle']);
