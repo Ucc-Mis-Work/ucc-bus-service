@@ -20,14 +20,27 @@ Route::post('register',[AuthController::class,'register']);
 
 //route for drivers
 Route::apiResource('drivers', DriverController::class);
-// Route::post('drivers/create',[DriverController::class,'create']);
-// Route::put('drivers/{id}',[DriverController::class,'edit']);
+// Route::get('drivers',[DriverController::class,'index']);
+// Route::get('drivers/{id}',[DriverController::class,'show']);
+// Route::post('drivers',[DriverController::class,'store']);
+// Route::put('drivers/{id}',[DriverController::class,'update']);
 
 // route for passengers
 Route::apiResource('passengers', PassengerController::class);
 
 // route for users
 Route::apiResource('users', UserController::class);
+// Route::get('users',[UserController::class,'index']);
+// Route::get('users/{id}',[UserController::class,'show']);
+// Route::post('users',[UserController::class,'store']);
+// Route::put('users/{id}',[UserController::class,'update']);
+
+// route for payments
+Route::apiResource('payments', PaymentController::class);
+// Route::get('payments',[PaymentController::class,'index']);
+// Route::get('payments/{id}',[PaymentController::class,'show']);
+// Route::post('payments',[PaymentController::class,'store']);
+// Route::put('payments/{id}',[PaymentController::class,'update']);
 
 
 Route::get('/auth/google/redirect', [GoogleAuthController::class, 'redirectToGoogle']);
