@@ -5,9 +5,12 @@ import { CustomLink } from '../../component/button/CustomLink'
 import { Button, Dialog, DialogContent, Divider, LinearProgress } from '@mui/material'
 import { useUser } from '@clerk/clerk-react';
 import OyaloBackground from '../../component/OyaloBackground'
+import { useState } from 'react'
+import DBSyncForm from '../../component/form/DBSyncForm'
 
 export default function PassengerLanding() {
 
+    const {isSignedIn, user, isLoaded } =  useUser()
     const links = [
         {
             name:'Search Route',
@@ -25,8 +28,9 @@ export default function PassengerLanding() {
             icon:<Construction className='size-5 group-hover:scale-110 transition-transform'/>
         },
     ]
+    const [DBSync,setDBSync]=useState(false)
 
-    const {isSignedIn, user, isLoaded } =  useUser()
+
 
     if (!isLoaded) return <div className='flex items-center justify-center h-screen'><LinearProgress/></div>
 
@@ -34,6 +38,9 @@ export default function PassengerLanding() {
 
     // TODO : Check if user ClerkId exists ---
         // Not existing . POP up to register or Update details
+    if(!DBSync){
+        return <DBSyncForm/>
+    }
 
         
     
