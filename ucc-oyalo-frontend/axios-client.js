@@ -1,12 +1,12 @@
 import axios from "axios";
 import toast from "react-hot-toast";
 
-const axiosClient = axios.create({
+const api = axios.create({
     baseURL: `${import.meta.env.VITE_API_BASE_URL}/api`
 })
 
 
-axiosClient.interceptors.request.use((config)=>{
+api.interceptors.request.use((config)=>{
 
     const token = sessionStorage.getItem('User_token')
     config.headers.Authorization = `Bearer ${token}`
@@ -15,7 +15,7 @@ axiosClient.interceptors.request.use((config)=>{
 })
 
 
-axiosClient.interceptors.response.use((response)=>{
+api.interceptors.response.use((response)=>{
     return response
 },
 (error)=>{
@@ -34,4 +34,4 @@ axiosClient.interceptors.response.use((response)=>{
 })
 
 
-export default axiosClient;
+export default api;
