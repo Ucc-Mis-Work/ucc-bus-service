@@ -32,6 +32,7 @@ export default function PassengerLanding() {
 
 
 
+
     if (!isLoaded) return <div className='flex items-center justify-center h-screen'><LinearProgress/></div>
 
     console.log(user);

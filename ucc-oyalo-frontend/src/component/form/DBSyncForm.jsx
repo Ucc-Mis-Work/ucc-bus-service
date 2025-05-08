@@ -39,7 +39,7 @@ export default function DBSyncForm() {
                     InputProps={{
                         startAdornment:(
                             <InputAdornment>
-                                <User className='mr-5'/>
+                                <User className='mr-2'/>
                             </InputAdornment>
                         )
                     }}
@@ -57,7 +57,7 @@ export default function DBSyncForm() {
                     InputProps={{
                         startAdornment:(
                             <InputAdornment>
-                                <Mail className='mr-5'/>
+                                <Mail className='mr-2'/>
                             </InputAdornment>
                         )
                     }}
@@ -74,14 +74,14 @@ export default function DBSyncForm() {
                     InputProps={{
                         startAdornment:(
                             <InputAdornment>
-                                <Phone className='mr-5'/>
+                                <Phone className='mr-2'/>
                             </InputAdornment>
                         )
                     }}
                 />
             </div>
             <div>
-                <InputLabel>Your Phone Number*</InputLabel>
+                <InputLabel>Your Address*</InputLabel>
                 <TextField
                     size='small'
                     fullWidth
@@ -91,7 +91,7 @@ export default function DBSyncForm() {
                     InputProps={{
                         startAdornment:(
                             <InputAdornment>
-                                <MapPin className='mr-5'/>
+                                <MapPin className='mr-2'/>
                             </InputAdornment>
                         )
                     }}
