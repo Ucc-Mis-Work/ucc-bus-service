@@ -13,8 +13,11 @@ return new class extends Migration
     {
         Schema::create('routes', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('city_id');
-            $table->string('distance');
+            $table->foreignId('town_id')->nullable();
+            $table->foreignId('region_id')->nullable();
+            $table->foreignId('city_id')->nullable();
+            $table->foreignId('user_id')
+            $table->string('distance')->nullable();
             $table->timestamps();
         });
     }
